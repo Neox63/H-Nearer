@@ -49,13 +49,6 @@ class EditPointViewController: UIViewController {
 
             return
         }
-        
-        for point in Data.pointsArray {
-            if nameField.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == point.name.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) {
-                nameError.text = "Un point existe déjà avec le nom \(point.name)"
-                return
-            }
-        }
 
         if let latitude = Double(latitudeField.text!) {
             if !(-180...180 ~= latitude) {
